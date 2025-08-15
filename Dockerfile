@@ -14,7 +14,7 @@ RUN apt-get update -y && \
 RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - \
     && apt-get install -y nodejs
 
-RUN wget -O /tmp/chrome.deb https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb && \
+RUN wget -q -O /tmp/chrome.deb https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb && \
 	apt-get install -y --no-install-recommends /tmp/chrome.deb && \
 	rm /tmp/chrome.deb && \
 	google-chrome --version
